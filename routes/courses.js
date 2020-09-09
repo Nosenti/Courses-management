@@ -1,8 +1,6 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const db = require("../config/database");
-const Course = require("../models/Course");
-const Sequelize = require("sequelize");
+import Sequelize from "sequelize";
 const Op = Sequelize.Op;
 
 router.get("/", (req, res) => {

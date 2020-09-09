@@ -1,13 +1,17 @@
 const Sequelize = require("sequelize");
-module.exports = new Sequelize("coursesmanagement", "postgres", "nosenti", {
-  host: "localhost",
-  dialect: "postgres",
-  operatorsAliases: false,
-
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000,
-  },
-});
+const keys = require("./keys");
+module.exports = new Sequelize(
+  keys.db.name,
+  keys.db.userName,
+  keys.db.password,
+  {
+    host: "localhost",
+    dialect: "postgres",
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 3000,
+      idle: 1000,
+    },
+  }
+);
