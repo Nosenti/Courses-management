@@ -1,9 +1,9 @@
-const express = require("express");
+import express from "express";
 const bodyParser = require("body-parser");
 
 const app = express();
 //database
-const db = require("./config/database");
+import db from "./config/database.js";
 
 // test DB
 db.authenticate()
